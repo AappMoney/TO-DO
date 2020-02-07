@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+</head>
+
+<body>
+
+    <div class="section">
+
+        <section class="item">
+
+            <div class="item-ferst uk-flex">
+                <form id="all-task-form" action="" style="width: 100%;" id="bagBtn">
+                    <button  id="showAllTaskBtn" class="show-all_card__btn active" type="submit">
+                        <span class="uk-margin-small-right" uk-icon="icon: list; ratio: .8"></span>
+                        All task
+                    </button>
+                </form>
+
+
+                <div class="item-block uk-margin-top" id="task-list_block">
+
+                    <!-- <div class="card-item">
+                        <span class="card-title-block">
+                            <i class="bg uk-margin-small-right"></i>
+                            <span class="title">To Do (0) weyfgewd sduydsgbvu fvhdguy</span>
+                        </span> 
+                        <span class="close-btn" uk-icon="icon: close;ratio: .8"></span>
+                    </div>
+
+                    <div class="card-item">
+                        <span class="card-title-block">
+                            <i class="bg uk-margin-small-right"></i>
+                            <span class="title">Trello (0)</span>
+                        </span>
+                        <span class="close-btn" uk-icon="icon: close;ratio: .8"></span>
+                    </div> -->
+
+                    
+
+                </div>
+
+                <div class="add-card-block uk-margin-small-top">
+                    <button class="show-add-input" type="button">
+                        <span class="uk-margin-small-right" uk-icon="icon: plus; ratio: .8"></span>
+                        add new card
+                    </button>
+
+                    <div id="showForm" class="inp-block uk-padding-small uk-background-default uk-box-shadow-small"
+                        uk-drop="mode: click;">
+                        <button class="uk-drop-close" type="button" uk-close></button>
+                        <form id="show-input">
+                            <input class="uk-input" id="input-title" type="text" placeholder="whrite card title" autofocus>
+
+                            <div class="popular-color uk-margin-small-top" id="bgblock">
+                                <i class="color-block active-color" id="concrete" data-hex="#95a5a6"></i>
+                                <i class="color-block" id="emerald" data-hex="#2ecc71"></i>
+                                <i class="color-block" id="peterRiver" data-hex="#3498db"></i>
+                                <i class="color-block" id="amethyst" data-hex="#9b59b6"></i>
+                                <i class="color-block" id="turquoise" data-hex="#1abc9c"></i>
+                                <i class="color-block" id="sunFolower" data-hex="#f1c40f"></i>
+                                <i class="color-block" id="draculaOrchid" data-hex="#2d3436"></i>
+                                <i class="color-block" id="alizarin" data-hex="#e74c3c"></i>
+                            </div>
+                            <button class="add-card-btn uk-margin-small-top" type="submit">add task</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="item-secont uk-flex uk-background-default uk-padding">
+                <div class="uk-flex tasks" id="contentSecont">
+                    <!-- <a class="uk-link-reset tasks-link uk-margin-top">
+                        <h2 class="tasks-title">
+                            TO DO
+                            <span class="uk-icon tasks-icon" uk-icon="icon: pencil"></span>
+                        </h2>
+                    </a>
+
+                    <div class="tasks-item uk-margin-top">
+                        <div class="tasks-block uk-margin-bottom">
+                            <div class="checkbox">
+                                <input class="task-input" id="tasks-input" type="checkbox">
+                                <label class="label-check" for="tasks-input">
+                                    <span class="label-check-icon" uk-icon="icon: check; ratio: 1"></span>
+                                </label>
+                            </div>
+                            <p class="tasks-text uk-margin-small-left">Lorem 13</p>
+                            <div class="uk-flex uk-flex-row tasks-item_row">
+                                <div>
+                                    <span class="tasks-edit_icon" uk-icon="icon: pencil; ratio: .8"></span>
+                                </div>
+                                <div>
+                                    <span class="tasks-deleted_icon" uk-icon="icon: trash; ratio: .8"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tasks-block uk-margin-bottom">
+                            <div class="checkbox">
+                                <input class="task-input" id="tasks-input" type="checkbox">
+                                <label class="label-check" for="tasks-input">
+                                    <span class="label-check-icon" uk-icon="icon: check; ratio: 1"></span>
+                                </label>
+                            </div>
+                            <p class="tasks-text uk-margin-small-left">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae esse sit odio hic atque magni id. Laborum, corrupti deserunt, at quae sunt velit quod, consequuntur culpa minus voluptatem consequatur provident!</p>
+                            <div class="uk-flex uk-flex-row tasks-item_row">
+                                <div>
+                                    <span class="tasks-edit_icon" uk-icon="icon: pencil; ratio: .8"></span>
+                                </div>
+                                <div>
+                                    <span class="tasks-deleted_icon" uk-icon="icon: trash; ratio: .8"></span>
+                                </div>
+                            </div>
+                        </div>
+                                      
+                </div>
+
+                    <div class="tasks-form_new uk-flex uk-flex-row uk-flex-middle uk-margin-top">
+                        
+                        <span uk-icon="icon: plus; ratio: 1.1"></span>
+                        <span class="tasks-form_show uk-margin-small-left">New challenge</span>
+                        
+                        <form class="uk-flex uk-flex-column task-add_form__block">
+                        <input class="uk-input add-tasks_input uk-border-rounded" type="text" placeholder="text challange">
+                        <div class="uk-margin-small-top">
+                            <button class="tasks-add_btn">Add task</button>
+                            <button class="tasks-cancel_btn">Cancel</button>
+                        </div>
+                    </form>
+
+                    </div> -->
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="javascript/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
