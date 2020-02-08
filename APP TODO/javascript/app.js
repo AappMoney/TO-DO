@@ -89,7 +89,7 @@ class Tasks {
         });
     }
 
-  
+
 
     showItem() {
         const cardItemall = document.querySelectorAll(".card-item");
@@ -126,7 +126,7 @@ class Tasks {
         });
 
     }
-    
+
 
     showAllTasks() {
         const secontItemContent = document.getElementById("contentSecont");
@@ -168,6 +168,45 @@ class Tasks {
         });
 
     }
+    deleteTask = (id) => {
+        
+        const preTasks = [...this.tasks];
+        this.tasks = preTasks.filter((item) => item.id !== id);
+        console.log(document.getElementById("showAllTaskBtn"));
+        this.showLenght();
+        this.showAllTasks();
+        this.renderTaskList();
+    }
+
+    renderTaskList = () => {
+        const tasks = this.tasks;
+        const taskList = document.getElementById("task-list_block");
+        taskList.innerHTML = '';
+        tasks.forEach((task, index) => {
+
+            const cardItem = document.createElement("div");
+            cardItem.setAttribute("class", "card-item");
+            cardItem.setAttribute("id", task.id);
+            cardItem.dataset.cardId = task.id;
+
+            const contentList = `
+                <span class="card-title-block" >
+                <i id="${task.color}" class="bg uk-margin-small-right"></i>
+                <span class="title">${task.title} <span id="numSub">()</span></span>
+                </span> 
+            
+            `;
+
+            const closeBtn = document.createElement("span");
+            closeBtn.classList = 'close-btn';
+            closeBtn.setAttribute("uk-icon", "icon: close;ratio: .8");
+            closeBtn.addEventListener("click", () => this.deleteTask(task.id));
+
+            cardItem.innerHTML = contentList;
+            cardItem.appendChild(closeBtn);
+            taskList.appendChild(cardItem);
+        });
+    }
 
     dataPush() {
         const formInput = document.getElementById("input-title");
@@ -190,18 +229,34 @@ class Tasks {
         const cardItem = document.createElement("div");
         cardItem.setAttribute("class", "card-item");
         cardItem.setAttribute("id", lastElemTasks.id);
+
+        cardItem.dataset.cardId = lastElemTasks.id; // unique id for cardItem data-card-id=""
+        // cardItem.dataset["card-id"] = lastElemTasks.id; // unique id for cardItem data-card-id=""
+
+
         const contentList = `
-        <span class="card-title-block">
+        <span class="card-title-block" >
         <i id="${activeColor.id}" class="bg uk-margin-small-right"></i>
         <span class="title">${lastElemTasks.title} <span id="numSub">()</span></span>
         </span> 
-        <span class="close-btn" uk-icon="icon: close;ratio: .8"></span>
+        
         `
+        // <span class="close-btn" uk-icon="icon: close;ratio: .8" onclick="${this.deleteTask.bind(this, lastElemTasks.id)}" ></span>
+        const closeBtn = document.createElement("span");
+        closeBtn.classList = 'close-btn';
+        closeBtn.setAttribute("uk-icon", "icon: close;ratio: .8");
+        closeBtn.addEventListener("click", () => this.deleteTask(lastElemTasks.id));
+
+
         cardItem.innerHTML = contentList;
+        cardItem.appendChild(closeBtn);
         taskList.appendChild(cardItem);
         this.showLenght()
         this.showAllTasks();
         this.showItem();
+
+        document.querySelector('.uk-drop-close').click(); // TODO: please refactor this
+
         console.log(this.tasks);
 
     }
