@@ -27,6 +27,7 @@
     flex-direction: column;
     padding: 60px 20px;
     border: 1px solid #f8f7f7;
+    position: relative;
 }
 
 .item-ferst {
@@ -269,6 +270,7 @@
 }
 .tasks-title {
     font-weight: 500;
+    position: relative;
     /* color: #2ecc71; */
 }
 .tasks-link::after {
@@ -297,9 +299,7 @@
     align-items: flex-start;
 }
 
-.task-input {
-    display: none;
-}
+
 .label-check {
     display: flex;
     align-items: center;
@@ -312,7 +312,7 @@
     cursor: pointer;
     transition: .3s all;
 }
-.label-check:hover {
+.label-check:hover:not(.active-label){
     background-color: #eee;
 }
 
@@ -321,10 +321,20 @@
     color: #8a9697;
     transition: .3s all;
 }
-.label-check:hover .label-check-icon svg {
+.label-check:hover:not(.active-label) .label-check-icon svg {
     display: block;
 }
-
+.active-label { 
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+.active-label span svg {
+    display: block;
+    z-index: 1111;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
 .tasks-text {
     display: block;
     width: 100%;
@@ -423,4 +433,12 @@
 }
 #btnshow span{
     margin-right: 6px;
+}
+.data-item {
+    font-size: 10px;
+    
+    /* color: #000; */
+    position: absolute;
+    right: 10px;
+    bottom: 0;
 }

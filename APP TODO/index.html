@@ -20,7 +20,7 @@
 
             <div class="item-ferst uk-flex">
                 <form id="all-task-form" action="" style="width: 100%;" id="bagBtn">
-                    <button  id="showAllTaskBtn" class="show-all_card__btn active" type="submit">
+                    <button  id="showAllTaskBtn" class="show-all_card__btn active" type="click">
                         <span class="uk-margin-small-right" uk-icon="icon: list; ratio: .8"></span>
                         All task
                     </button>
@@ -55,9 +55,8 @@
                         add new card
                     </button>
 
-                    <div id="showForm" class="inp-block uk-padding-small uk-background-default uk-box-shadow-small"
-                        uk-drop="mode: click;">
-                        <button class="uk-drop-close" type="button" uk-close></button>
+                    <div id="showForm" class="inp-block uk-padding-small uk-background-default uk-box-shadow-small" uk-drop="mode: click;">
+                        <button id="btn-new-card" class="uk-drop-close" type="button" uk-close></button>
                         <form id="show-input">
                             <input class="uk-input" id="input-title" type="text" placeholder="whrite card title" autofocus>
 
@@ -87,6 +86,8 @@
                         <h2 class="tasks-title">
                             TO DO
                             <span class="uk-icon tasks-icon" uk-icon="icon: pencil"></span>
+
+                            <span id="date-card" class="uk-text data-item">10,2201,20102,1</span>
                         </h2>
                     </a>
 
@@ -153,7 +154,7 @@
     </div>
 
 
-    <script src="javascript/app.js"></script>
+    <script src="javascript/aapp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
 </body>
